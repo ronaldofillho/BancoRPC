@@ -13,7 +13,7 @@ public class AppClienteBanco {
     public static void main(String[] args) throws RemoteException, NotBoundException, MalformedURLException {
         // procura o serviço no RMI Registry local. Perceba que o cliente não connhece a implementação do servidor,
         // apenas a interface
-        Registry registry = LocateRegistry.getRegistry();
+        Registry registry = LocateRegistry.getRegistry(args[0]);
         BancoServiceIF banco = (BancoServiceIF) registry.lookup("BancoService");
 
         menu();
